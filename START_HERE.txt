@@ -1,0 +1,23 @@
+LOCALFIX — FRONTEND PROJECT
+
+1. Extract the ZIP.
+2. Open the localfix folder in VS Code.
+3. In its terminal, run:
+
+   npm install
+   npm run dev
+
+4. Open the URL printed in Terminal.
+
+Requires Node.js 22.12+ or Node 24.
+
+Read README.md for the complete guide.
+Read docs/ for diagrams, requirements, testing and presentation preparation.
+
+Demo roles:
+Customer: Mohammad Abdali
+Provider: Ahmad Rahimi
+Admin: LocalFix Admin
+
+No password is needed. Use the header account switcher to change roles.
+Use fictional information only. Data is stored in this browser.

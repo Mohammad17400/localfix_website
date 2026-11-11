@@ -1,0 +1,13 @@
+
+> localfix@1.1.0 build
+> vite build
+
+vite v7.2.2 building client environment for production...
+transforming...
+✓ 2002 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.70 kB │ gzip:   0.41 kB
+dist/assets/index-DOlmmbRA.css   50.04 kB │ gzip:  11.26 kB
+dist/assets/index-B-mbLlUJ.js   440.31 kB │ gzip: 139.29 kB
+✓ built in 4.26s

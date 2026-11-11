@@ -1,0 +1,21 @@
+digraph ERD {
+ graph [rankdir=TB,bgcolor="#faf9f5",pad=.5,nodesep=.5,ranksep=.9];
+ node [shape=record,fontname="Arial",fontsize=11,style="rounded,filled",fillcolor="#ffffff",color="#9bb9a7",margin="0.16,0.12"];
+ edge [color="#537767",fontname="Arial",fontsize=10,arrowhead=none];
+ User [label="USER|id (PK)\lname\lemail (fictional)\lrole\larea\l"];
+ Provider [label="PROVIDER|id (PK)\luserId (FK)\lname, bio\lexperienceYears\lserviceAreas[]\lisActive\l"];
+ Category [label="CATEGORY|id (PK)\lname\ldescription\lisActive\l"];
+ Service [label="SERVICE|id (PK)\lproviderId (FK)\lcategoryId (FK)\ltitle, description\lprice, pricingBasis\lisActive\l"];
+ Request [label="REQUEST|id (PK)\lcustomerId (FK)\lproviderId (FK)\lserviceId (FK)\lserviceSnapshot\lproblem, address, area\lpreferredDate / Time\lstatus, statusHistory[]\l"];
+ Review [label="REVIEW|id (PK)\lrequestId (FK, unique)\lcustomerId (FK)\lproviderId (FK)\lrating, comment\l"];
+ Favorite [label="FAVORITE|id (PK)\lcustomerId (FK)\lproviderId (FK)\lunique customer/provider pair\l"];
+ User -> Provider [label="1 to 0..1\nprovider profile"];
+ Provider -> Service [label="1 to 0..many\noffers"];
+ Category -> Service [label="1 to 0..many\ngroups"];
+ User -> Request [label="1 to 0..many\nsubmits"];
+ Provider -> Request [label="1 to 0..many\nreceives"];
+ Service -> Request [label="1 to 0..many\nselected service"];
+ Request -> Review [label="1 to 0..1\ncompleted request review"];
+ User -> Favorite [label="1 to 0..many"];
+ Provider -> Favorite [label="1 to 0..many"];
+}

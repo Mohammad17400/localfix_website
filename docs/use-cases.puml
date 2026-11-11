@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+actor Visitor
+actor Customer
+actor "Service Provider" as Provider
+actor Administrator
+rectangle "LocalFix frontend demonstration" {
+ usecase "Browse / filter providers" as Browse
+ usecase "View provider profile" as View
+ usecase "Select demo account" as Select
+ usecase "Submit service request" as Request
+ usecase "Track own requests" as Track
+ usecase "Cancel pending request" as Cancel
+ usecase "Save favorite" as Favorite
+ usecase "Review completed request" as Review
+ usecase "Manage own services / profile" as Manage
+ usecase "Accept / decline / advance request" as Update
+ usecase "Manage categories" as Categories
+ usecase "Activate / deactivate providers" as Visibility
+ usecase "Inspect all requests" as Inspect
+}
+Visitor --> Browse
+Visitor --> View
+Visitor --> Select
+Customer --> Browse
+Customer --> Request
+Customer --> Track
+Customer --> Cancel
+Customer --> Favorite
+Customer --> Review
+Provider --> Manage
+Provider --> Update
+Administrator --> Categories
+Administrator --> Visibility
+Administrator --> Inspect
+note bottom of Select
+Demo account switching only;
+not real authentication.
+end note
+@enduml

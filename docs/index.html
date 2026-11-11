@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>LocalFix project guide</title
+  ><style>
+    body {
+      font:
+        16px/1.7 Arial,
+        sans-serif;
+      color: #203d36;
+      background: #faf9f5;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    h1 {
+      font-size: 48px;
+      letter-spacing: -2px;
+    }
+    h2 {
+      margin-top: 45px;
+    }
+    a {
+      color: #126b5e;
+    }
+    img {
+      max-width: 100%;
+      border: 1px solid #dbe5d9;
+      border-radius: 10px;
+      background: white;
+    }
+    p.note {
+      padding: 18px;
+      background: #e9f0df;
+      border-radius: 8px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    code {
+      background: #e9eee3;
+      padding: 3px 7px;
+      border-radius: 4px;
+    }
+    @media print {
+      body {
+        font-size: 11px;
+      }
+      h2 {
+        break-before: page;
+      }
+      img {
+        max-height: 85vh;
+      }
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+  <body>
+    <p>LOCALFIX / COURSE PROJECT PACKAGE</p>
+    <h1>Good help. Close to home.</h1>
+    <p>
+      A JavaScript + React frontend marketplace with Tailwind CSS and Motion for
+      React.
+    </p>
+    <p class="note">
+      Open the project README for setup. Run <code>npm install</code> then
+      <code>npm run dev</code> inside the localfix folder. This guide can be
+      opened directly; the app itself needs a local server.
+    </p>
+    <h2>Project documents</h2>
+    <ol>
+      <li><a href="01_Project_Proposal.md">Project proposal</a></li>
+      <li>
+        <a href="02_Research_Template.md"
+          >Research questions and blank interview record</a
+        >
+      </li>
+      <li><a href="03_Requirements.md">Requirements and traceability</a></li>
+      <li>
+        <a href="04_Models_and_Flows.md"
+          >Models, sitemap, flows and use-case descriptions</a
+        >
+      </li>
+      <li>
+        <a href="05_Design_and_Code_Guide.md"
+          >Design and JavaScript learning guide</a
+        >
+      </li>
+      <li>
+        <a href="06_Test_Results.md">Test results and remaining checks</a>
+      </li>
+      <li>
+        <a href="07_Presentation_Outline.md"
+          >Presentation outline and speaker guide</a
+        >
+      </li>
+    </ol>
+    <p>
+      Markdown files can be read in any editor or previewed in VS Code. Actual
+      interviews, team details, instructor approval and final repository links
+      must be completed by your team.
+    </p>
+    <h2>UML use cases</h2>
+    <img
+      src="diagrams/use-cases.svg"
+      alt="Use case diagram with visitor, customer, provider and administrator actors"
+    />
+    <h2>Conceptual data model</h2>
+    <p>
+      Related arrays use IDs as conceptual primary/foreign keys. There is no
+      database server. Reviews also reference the customer and provider from
+      their request.
+    </p>
+    <img
+      src="diagrams/erd.svg"
+      alt="Entity relationship diagram for users, providers, services, categories, requests, reviews and favorites"
+    />
+    <h2>Request flow and status decisions</h2>
+    <img
+      src="diagrams/request-flow.svg"
+      alt="Branching request flow from discovery through validation, completion and review"
+    />
+    <h2>Layout references</h2>
+    <p>
+      These wireframe exports document layout hierarchy for study and
+      presentation; they do not claim earlier instructor approval.
+    </p>
+    <img
+      src="wireframes.svg"
+      alt="Wireframe references for homepage, discovery, request form and dashboard"
+    />
+    <h2>Demo sequence</h2>
+    <p>
+      Customer Mohammad Abdali requests Ahmad Rahimi's plumbing service. Switch
+      through the header to provider Ahmad, accept, start and complete. Switch
+      back to Mohammad to review. Refresh to demonstrate persistence. Try admin
+      visibility controls, then reset the demo.
+    </p>
+    <p class="note">
+      All service profiles and prices are fictional. No real provider is
+      contacted. No passwords, payments or backend are used.
+    </p>
+  </body>
+</html>

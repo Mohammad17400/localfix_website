@@ -1,0 +1,30 @@
+digraph Flow {
+ graph [rankdir=TB,bgcolor="#faf9f5",pad=.4,nodesep=.5,ranksep=.45];
+ node [shape=box,style="rounded,filled",fillcolor="#ffffff",color="#8aac97",fontname="Arial",fontsize=12,margin=".18,.13"];
+ edge [color="#527563",fontname="Arial",fontsize=10];
+ start [label="Browse and filter providers"];
+ service [label="Select an active service"];
+ actor [shape=diamond,label="Customer selected?",fillcolor="#edf3e6"];
+ select [label="Choose demo customer\nReturn to selected service"];
+ form [label="Describe task\nEnter area, address and preferred time"];
+ valid [shape=diamond,label="Valid inputs?",fillcolor="#edf3e6"];
+ error [label="Show specific errors"];
+ review [label="Review request summary"];
+ active [shape=diamond,label="Still active?",fillcolor="#edf3e6"];
+ other [label="Choose another service"];
+ pending [label="Create one Pending request",fillcolor="#f7edcd"];
+ decision [shape=diamond,label="Provider response",fillcolor="#edf3e6"];
+ accepted [label="Accepted",fillcolor="#e1efdb"];
+ declined [label="Declined",fillcolor="#f2e5de"];
+ cancelled [label="Cancelled",fillcolor="#f2e5de"];
+ progress [label="In progress",fillcolor="#dfeaf1"];
+ completed [label="Completed",fillcolor="#d9eee2"];
+ feedback [label="Customer may leave one review"];
+ start -> service -> actor;
+ actor -> select [label="No"];select -> form;actor -> form [label="Yes"];
+ form -> valid;valid -> error [label="No"];error -> form;valid -> review [label="Yes"];
+ review -> active;active -> other [label="No"];active -> pending [label="Yes"];
+ pending -> cancelled [label="Customer cancels"];
+ pending -> decision;decision -> accepted [label="Accept"];decision -> declined [label="Decline"];
+ accepted -> progress [label="Provider starts"];progress -> completed [label="Provider finishes"];completed -> feedback;
+}

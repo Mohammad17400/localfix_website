@@ -1,0 +1,28 @@
+
+> localfix@1.1.0 test
+> node --test tests/*.test.js
+
+✔ seed has consistent references and ratings (36.514892ms)
+✔ request journey creates one request, completes and reviews it (17.000663ms)
+✔ duplicate submission does not add a second request (4.368288ms)
+✔ request input and future-time validation (16.969996ms)
+✔ only assigned provider can act and cannot skip statuses (10.953757ms)
+✔ customer cancellation is restricted by ownership and status (5.188519ms)
+✔ review ownership, completion, range and duplicate validation (9.262967ms)
+✔ archive keeps history and blocks new requests (6.936513ms)
+✔ deactivating provider or category hides services without destroying requests (10.422663ms)
+✔ service editing preserves historical prices and ownership (3.936256ms)
+✔ favorites toggle and stay scoped to customer (3.297275ms)
+✔ valid data round trips through storage (6.760423ms)
+✔ malformed data and unavailable storage recover without crashing (23.467444ms)
+✔ profile validation and editing updates provider display (4.537997ms)
+✔ request IDs work without crypto and remain unique (0.655472ms)
+✔ request IDs accept browsers with getRandomValues but no randomUUID (1.751832ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 416.79949
